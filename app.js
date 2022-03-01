@@ -1,5 +1,3 @@
-//jshint esversion:6
-
 const express = require("express");
 //const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -17,11 +15,29 @@ app.use(express.static("public"));
 
 
 
+//GETS
 
+app.get("/",(req,res)=>{
+  res.render(__dirname+"/views/home.ejs",{homeStartingContent: homeStartingContent});
+});
 
+app.get("/contact",(req,res)=>{
+  res.render(__dirname+"/views/contact.ejs",{contactContent: contactContent});
+});
 
+app.get("/about",(req,res)=>{
+  res.render(__dirname+"/views/about.ejs",{aboutContent: aboutContent});
+});
 
+app.get("/compose",(req,res)=>{
+  res.render(__dirname+"/views/compose.ejs");
+});
 
+//POSTS FROM FORMS
+
+app.post("/compose",(req,res)=>{
+  console.log(req.body.title);
+})
 
 
 
