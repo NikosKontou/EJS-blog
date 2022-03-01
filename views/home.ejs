@@ -3,4 +3,9 @@
     Home
 </h1>
 <p><%= homeStartingContent %></p>
+<!--<% console.log(posts); %> -->
+<% posts.forEach( (e)=>{ %>
+    <h2><%= e.title %></h2>
+    <p><%= e.body %></p>
+    <% })%>
 <%- include('partials/footer'); -%>
