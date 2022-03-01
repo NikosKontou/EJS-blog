@@ -6,6 +6,9 @@
 <!--<% console.log(posts); %> -->
 <% posts.forEach( (e)=>{ %>
     <h2><%= e.title %></h2>
-    <p><%= e.body %></p>
+    <p><%= e.body.substring(0,100)+" ..."     ; %>
+        <a href="/posts/<%= e.title %>
+        ">Read more</a></p>
     <% })%>
+    
 <%- include('partials/footer'); -%>
